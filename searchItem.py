@@ -21,6 +21,7 @@ class SearchCases(unittest.TestCase):
         self.driver.find_element_by_name('submit_search').click()
         time.sleep(2)
         self.assertTrue('DRESS' in self.driver.find_element_by_xpath('//*[@id="center_column"]/h1/span[1]').text)
+        #probando
 
     def test_search_find_tshirt(self):
 
