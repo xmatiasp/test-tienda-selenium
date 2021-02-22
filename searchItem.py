@@ -37,8 +37,7 @@ class SearchCases(unittest.TestCase):
         self.functionItemsPage.introducir_cantidad('25')
         self.functionItemsPage.hacer_click_by_xpath('//*[@id="quantity_wanted_p"]/a[2]/span/i', 3)
         time.sleep(3)
-        self.assertEqual(self.driver.find_element_by_id("quantity_wanted").get_attribute("value"), '28')
-
+        self.assertEqual(self.functionItemsPage.obtener_numero_Input(), '28')
 
     def tearDown(self):
         self.driver.close()

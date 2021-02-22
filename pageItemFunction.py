@@ -10,3 +10,6 @@ class PageItemsFunction:
     def introducir_cantidad(self, cantidad):
         self.driver.find_element_by_id(self.input_box).clear()
         self.driver.find_element_by_id(self.input_box).send_keys(cantidad)
+
+    def obtener_numero_Input(self):
+        return self.driver.find_element_by_id("quantity_wanted").get_attribute("value")
