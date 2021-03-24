@@ -3,13 +3,16 @@ from selenium import webdriver
 from TiendaDeRopa.tests.page_objects.pageItemFunction import PageItemsFunction
 from TiendaDeRopa.tests.page_objects.pageFunctionLogin import PageFunctionLogin
 from TiendaDeRopa.tests.page_objects.pageItemLogin import PageItemLogin
+from selenium.webdriver.chrome.options import Options
 import time
 
 
 class LoginCases(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome('drivers/chromedriver.exe')
+        option = Options()
+        option.add_argument("headless")
+        self.driver = webdriver.Chrome('tests/drivers/chromedriver.exe', options=option)
         self.driver.maximize_window()
         self.driver.get('http://automationpractice.com/index.php')
         self.functionItemsPage = PageItemsFunction(self.driver)

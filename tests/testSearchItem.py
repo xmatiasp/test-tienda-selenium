@@ -12,11 +12,8 @@ class SearchCases(unittest.TestCase):
     def setUp(self):
         option = Options()
         option.add_argument("start-maximized")
-        #option.add_argument("--headless")
-        #option.add_argument("incognito")
-        self.driver = webdriver.Chrome('tests/drivers/chromedriver.exe', options=option)
-        #self.driver.set_window_size(800, 600)
-        #self.driver.set_window_position(10, 10)
+        option.add_argument("--headless")
+        self.driver = webdriver.Chrome('drivers/chromedriver.exe', options=option)
         #self.driver.maximize_window()
         self.driver.get('http://automationpractice.com/index.php')
         self.indexPage = PageIndex(self.driver)
